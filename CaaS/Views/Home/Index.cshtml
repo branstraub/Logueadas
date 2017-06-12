@@ -1,0 +1,107 @@
+﻿@model IEnumerable<CaaS.Models.BVModels.EquiposViewModel>
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>.Logueadas</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,400,700,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="~/Content/reset.css">
+    <link rel="stylesheet" href="~/Content/desktop.css">
+
+</head>
+<body>
+    <header class="full-width main-header subtle-shadow">
+        <div class="container-80 center container">
+            <h1 class="text-header">.Logueadas</h1>
+        </div>
+    </header>
+
+<div class="container-80 center container dashboard-container">
+    <h1 class="title-table">Tabla de Equipos</h1> 
+</div>
+    
+<table class="table center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puntaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PuntajeHtml)
+        </th>
+           
+    </tr>
+        
+    @{
+        try
+        {
+            if (Model.Count() != 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Puntaje)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PuntajeHtml)
+                        </td>
+
+                    </tr>
+                }
+            }
+               
+        }
+        catch (Exception e)
+        {
+              
+        }
+    }
+</table>
+    
+    <ul class="center" style="margin-top: 20px">
+        <li>
+            @Html.ActionLink("Registrarse", "CreateEquipo", null, new { @class = "abajo center" })
+        </li>
+        <li>
+            @Html.ActionLink("Examen HTML", "Examen", null, new { @class = "abajo center" })
+        </li>
+        <li>
+            <a class="center abajo" target="_blank" href="https://1drv.ms/u/s!AgqLkIYoIIpmncBv_Q_HvLmaCwDNvQ">Descargar</a>  
+        </li>
+    </ul>
+
+   
+
+
+
+    
+<footer class="full-width center">
+    <ul class="center">
+        <li>
+            <img src="~/Content/ms.png" height="50px">
+        </li>
+        <li>
+            <img src="~/Content/eidos.png" height="50px">
+        </li>
+
+    </ul>
+</footer>
+    
+    <script type="text/javascript">
+        setTimeout("location.reload(true);",20000);
+  </script>
+
+</body>
+</html>

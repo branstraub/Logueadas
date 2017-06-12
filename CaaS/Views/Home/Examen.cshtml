@@ -1,0 +1,158 @@
+﻿@model CaaS.Models.BVModels.ExamenViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>.Logueadas</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,400,700,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="~/Content/reset.css">
+    <link rel="stylesheet" href="~/Content/desktop.css">
+
+</head>
+<body>
+    <header class="full-width main-header subtle-shadow">
+        <div class="container-80 center container">
+            <h1 class="text-header">.Logueadas</h1>
+        </div>
+    </header>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="container-80 center container dashboard-container">
+            <h1 class="title-table">Examen HTML</h1>
+        </div>
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        
+        <div class="form-group center">
+            <label>Codigo de Equipo</label>
+            @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group center">
+                <label>¿Que es HTML?</label>
+            
+                <select id="Respuesta1" name="Respuesta1">
+                    <option value="0">Un lenguaje de marcado web</option>
+                    <option value="1">Un lenguaje de programacion</option>
+                    <option value="2">El estilo de una pagina web</option>
+                    <option value="3">Un estandard de seguridad</option>
+                </select>
+            </div>
+
+        <div class="form-group center">
+            <label>¿Que dos partes conforman el HTML?</label>
+            <select id="Respuesta2" name="Respuesta2">
+                <option value="0">Head y Body</option>
+                <option value="1">Header y Body</option>
+                <option value="2">Img y P</option>
+                <option value="3">Encabezado y Titulo</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Para que sirve el elemento P?</label>
+            <select id="Respuesta3" name="Respuesta3">
+                <option value="0">Imagenes</option>
+                <option value="1">Videos</option>
+                <option value="2">Parrafos</option>
+                <option value="3">Encabezados</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Para que sirve el elemento H1?</label>
+            <select id="Respuesta4" name="Respuesta4">
+                <option value="0">Imagenes</option>
+                <option value="1">Videos</option>
+                <option value="2">Parrafos</option>
+                <option value="3">Encabezados</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Cual es la diferencia entre H1 y H2?</label>
+            <select id="Respuesta5" name="Respuesta5">
+                <option value="0">Un numero</option>
+                <option value="1">El tamaño e importancia</option>
+                <option value="2">El color</option>
+                <option value="3">El tipo de letra</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Para que sirve el elemento IMG?</label>
+            <select id="Respuesta6" name="Respuesta6">
+                <option value="0">Imagenes</option>
+                <option value="1">Videos</option>
+                <option value="2">Parrafos</option>
+                <option value="3">Encabezados</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Con que propiedad agregamos la ruta de la imagen?</label>
+            <select id="Respuesta7" name="Respuesta7">
+                <option value="0">Href</option>
+                <option value="1">Src</option>
+                <option value="2">Width</option>
+                <option value="3">Alt</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Como ponemos el texto en negrita?</label>
+            <select id="Respuesta8" name="Respuesta8">
+                <option value="0">B</option>
+                <option value="1">UL</option>
+                <option value="2">A</option>
+                <option value="3">SUB</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Con que tag ponemos un link?</label>
+            <select id="Respuesta9" name="Respuesta9">
+                <option value="0">B</option>
+                <option value="1">UL</option>
+                <option value="2">A</option>
+                <option value="3">SUB</option>
+            </select>
+        </div>
+        
+        <div class="form-group center">
+            <label>¿Que es el CSS?</label>
+            <select id="Respuesta10" name="Respuesta10">
+                <option value="0">Hoja de Estilos</option>
+                <option value="1">Un tag HTML</option>
+                <option value="2">Una opcion de imagen</option>
+                <option value="3">Una propiedad</option>
+            </select>
+        </div>
+        
+      
+       
+
+        <div class="form-group center">
+           
+                <input type="submit" value="Enviar" class="center "/>
+          
+        </div>
+    </div>
+}
+    
+
+</body>
+</html>

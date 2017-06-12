@@ -1,0 +1,53 @@
+﻿@model CaaS.Models.BVModels.EquiposViewCreateModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>.Logueadas</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,400,700,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="~/Content/reset.css">
+    <link rel="stylesheet" href="~/Content/desktop.css">
+
+</head>
+<body>
+    <header class="full-width main-header subtle-shadow">
+        <div class="container-80 center container">
+            <h1 class="text-header">.Logueadas</h1>
+        </div>
+    </header>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="container-80 center container dashboard-container">
+            <h1 class="title-table">Crear Equipo</h1>
+        </div>
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        <div class="form-group center">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new {@class = "control-label col-md-2"})
+           
+                @Html.EditorFor(model => model.Nombre, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Nombre, "", new {@class = "text-danger"})
+           
+        </div>
+
+        <div class="form-group center">
+           
+                <input type="submit" value="Crear" class="center "/>
+          
+        </div>
+    </div>
+}
+
+</body>
+</html>
