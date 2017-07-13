@@ -26,7 +26,7 @@ namespace CaaS.Models.BVModels
         [Display(Name = "Puntaje")]
         public int Puntaje { get; set; }
 
-        [Display(Name = "Puntaje HTML")]
+        [Display(Name = "Puntaje Examen")]
         public int PuntajeHtml { get; set; }
 
         [Display(Name = "Codigo")]

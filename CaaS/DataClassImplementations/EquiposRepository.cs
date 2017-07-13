@@ -62,7 +62,7 @@ namespace CaaS.DataClassImplementations
         public void DeleteEquipo(string id)
         {
 
-            //borrar las combis asociadas al servicio
+            
 
             using (var context = new ApplicationDbContext())
             {
